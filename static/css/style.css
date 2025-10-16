@@ -1,0 +1,71 @@
+/* General body background */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card styling */
+.card {
+    border-radius: 12px;
+    background-color: #ffffff;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Buttons styling */
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.btn-success:hover {
+    background-color: #157347;
+    transform: translateY(-2px);
+}
+
+/* Secondary buttons */
+.btn-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+/* Flash messages styling */
+.flash {
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Table hover effect */
+table.table-hover tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Input focus */
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+}
+
+/* Smooth fadeIn animation for flash */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-5px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
