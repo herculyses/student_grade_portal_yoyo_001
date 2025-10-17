@@ -319,10 +319,3 @@ if __name__ == '__main__':
         if not User.query.filter_by(username='student').first():
             db.session.add(User(username='student', password=generate_password_hash('stud123'), role='Student'))
         db.session.commit()
-
-    ENV = os.environ.get('FLASK_ENV', 'development')
-    if ENV == 'development':
-        app.run(debug=True)
-    else:
-        from waitress import serve
-        serve(app, host='0.0.0.0', port=5000)
