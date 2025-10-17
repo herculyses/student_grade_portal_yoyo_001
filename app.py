@@ -308,14 +308,14 @@ def upload_students():
     return render_template('upload_students.html')
 
 # --- Initialize Database ---
-if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-        # Default users with hashed passwords
-        if not User.query.filter_by(username='admin').first():
-            db.session.add(User(username='admin', password=generate_password_hash('admin123'), role='Admin'))
-        if not User.query.filter_by(username='instructor').first():
-            db.session.add(User(username='instructor', password=generate_password_hash('instr123'), role='Instructor'))
-        if not User.query.filter_by(username='student').first():
-            db.session.add(User(username='student', password=generate_password_hash('stud123'), role='Student'))
-        db.session.commit()
+with app.app_context():
+    db.create_all()
+
+    # Default users with hashed passwords
+    if not User.query.filter_by(username='admin').first():
+        db.session.add(User(username='admin', password=generate_password_hash('admin123'), role='Admin'))
+    if not User.query.filter_by(username='instructor').first():
+        db.session.add(User(username='instructor', password=generate_password_hash('instr123'), role='Instructor'))
+    if not User.query.filter_by(username='student').first():
+        db.session.add(User(username='student', password=generate_password_hash('stud123'), role='Student'))
+    db.session.commit()
