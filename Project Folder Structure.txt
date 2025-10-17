@@ -1,0 +1,32 @@
+Program 38/
+│
+├── app.py
+├── start.sh                  # Optional: for Linux deployment
+├── runtime.txt               # For Render to know Python version
+├── Project Folder Structure.text
+├── hash_fixer.py             # Utility script if needed
+├── uploads/                  # CSV upload folder
+│   └── grades.csv            # Example CSV
+├── instance/
+│   └── app.db                # SQLite database
+├── .git/                     # Git repository folder (hidden)
+│
+├── templates/
+│   ├── login.html
+│   ├── change_password.html
+│   ├── dashboard_admin.html
+│   ├── dashboard_instructor.html
+│   ├── dashboard_student.html
+│   ├── students.html         # Only one template for viewing students
+│   ├── add_student.html
+│   ├── edit_student.html
+│   ├── create_user.html
+│   └── upload_students.html
+│
+└── static/
+    ├── css/
+    │   ├── style.css
+    │   └── student.css
+    ├── js/
+    │   ├── script.js
+    │   └── student.js         # You mentioned student.css here before; probably rename it to student.js

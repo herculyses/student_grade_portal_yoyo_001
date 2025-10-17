@@ -10,7 +10,7 @@
 <body class="bg-light">
 
 <div class="container mt-5">
-    <h3>Upload Students via CSV</h3>
+    <h3 class="text-primary mb-4">Upload Students via CSV</h3>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
@@ -20,15 +20,15 @@
       {% endif %}
     {% endwith %}
 
-    <div class="card shadow p-4 mt-3">
+    <div class="card shadow-sm p-4">
         <form method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="file" class="form-label">Select CSV File</label>
                 <input type="file" name="file" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-success">Upload CSV</button>
+            <button type="submit" class="btn btn-success w-100">Upload CSV</button>
         </form>
-        <a href="{{ url_for('view_students') }}" class="btn btn-secondary mt-2">Back to Students</a>
+        <a href="{{ url_for('view_students') }}" class="btn btn-secondary mt-3 w-100">Back to Students</a>
     </div>
 </div>
 

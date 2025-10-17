@@ -1,71 +1,74 @@
-/* General body background */
-body {
-    background-color: #f8f9fa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* style.css */
+
+/* Table hover effect */
+.table-hover tbody tr:hover {
+    background-color: #f0f8ff; /* light blue highlight */
+    transition: background-color 0.3s ease;
 }
 
-/* Card styling */
-.card {
-    border-radius: 12px;
-    background-color: #ffffff;
-    transition: transform 0.2s, box-shadow 0.2s;
+/* Delete button hover */
+#delete-selected {
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Hover effect for cards */
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+#delete-selected:hover {
+    background-color: #dc3545; /* Bootstrap danger darker red */
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
-/* Buttons styling */
-.btn-primary {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-    transition: background-color 0.2s, transform 0.2s;
-}
-
+/* Add Student & Upload CSV hover */
 .btn-primary:hover {
     background-color: #0b5ed7;
-    transform: translateY(-2px);
-}
-
-.btn-success {
-    background-color: #198754;
-    border-color: #198754;
+    transform: scale(1.03);
 }
 
 .btn-success:hover {
-    background-color: #157347;
-    transform: translateY(-2px);
+    background-color: #198754;
+    transform: scale(1.03);
 }
 
-/* Secondary buttons */
+/* Table styling */
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Flash messages */
+.flash {
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 500;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+/* Back to Dashboard button */
 .btn-secondary:hover {
     background-color: #6c757d;
-    color: #fff;
+    transform: scale(1.03);
 }
 
-/* Flash messages styling */
+/* Smooth modal animation */
+.modal.fade .modal-dialog {
+  transform: translateY(-20px);
+  transition: transform 0.3s ease-out;
+}
+.modal.show .modal-dialog {
+  transform: translateY(0);
+}
+
+/* Optional: subtle flash fade */
 .flash {
-    border-radius: 8px;
-    padding: 10px 15px;
-    margin-bottom: 15px;
-    animation: fadeIn 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Table hover effect */
-table.table-hover tbody tr:hover {
-    background-color: #e9ecef;
+.btn:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Input focus */
-.form-control:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+.table {
+  margin-top: 15px;
 }
 
-/* Smooth fadeIn animation for flash */
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(-5px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
+
