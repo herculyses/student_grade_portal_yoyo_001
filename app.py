@@ -11,7 +11,11 @@ import os, csv
 # --- Flask Setup ---
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+
+uri = os.getenv("DATABASE_URL", "sqlite:///app.db")
+if uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://", 1)
+app.config['SQLALCHEMY_DATABASE_URI'] = uri
 db = SQLAlchemy(app)
 
 UPLOAD_FOLDER = 'uploads'

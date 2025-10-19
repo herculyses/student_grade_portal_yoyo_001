@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: student-grade-portal
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: waitress-serve --port=$PORT app:app
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: student-grade-db
+          property: connectionString
+
+databases:
+  - name: student-grade-db
+    plan: free
